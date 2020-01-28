@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftadeu-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/22 22:13:57 by ftadeu-d          #+#    #+#             */
-/*   Updated: 2020/01/27 19:57:12 by ftadeu-d         ###   ########.fr       */
+/*   Created: 2020/01/27 21:22:44 by ftadeu-d          #+#    #+#             */
+/*   Updated: 2020/01/27 21:45:10 by ftadeu-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "LIBFT.H"
 
-/*
-** Replaces the first n chars in string dest by the chars in string src.
-** Returns a void *dest to allow function chaining.
-*/
-
-void		*ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memccpy(void *restrict dst, const void *restrict src, int c, size_t n)
 {
-	char		*d;
-	const char	*s;
+	void unsigned char *p;
 
-	d = dest;
-	s = src;
-	while (n--)
-		*d++ = *s++;
-	return (dest);
+	p = ft_memchr(src, c, n);
+	if (p != 0)
+
 }

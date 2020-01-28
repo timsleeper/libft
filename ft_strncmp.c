@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftadeu-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/22 22:13:57 by ftadeu-d          #+#    #+#             */
-/*   Updated: 2020/01/27 19:57:12 by ftadeu-d         ###   ########.fr       */
+/*   Created: 2020/01/27 20:05:27 by ftadeu-d          #+#    #+#             */
+/*   Updated: 2020/01/27 21:21:03 by ftadeu-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "LIBFT.H"
 
 /*
-** Replaces the first n chars in string dest by the chars in string src.
-** Returns a void *dest to allow function chaining.
+** Compares s1 and s2 until they are different.
+** Returns integer >, = or < than 0 according to (s1 - s2)
 */
 
-void		*ft_memcpy(void *dest, const void *src, size_t n)
+int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	char		*d;
-	const char	*s;
-
-	d = dest;
-	s = src;
 	while (n--)
-		*d++ = *s++;
-	return (dest);
+		if (*s1++ != *s2++)
+			return (*(unsigned char*)(s1 - 1) - *(unsigned char*)(s2 - 1));
+	return (0);
 }

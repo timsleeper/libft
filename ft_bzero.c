@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftadeu-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/22 22:13:57 by ftadeu-d          #+#    #+#             */
-/*   Updated: 2020/01/27 19:57:12 by ftadeu-d         ###   ########.fr       */
+/*   Created: 2020/01/27 21:12:17 by ftadeu-d          #+#    #+#             */
+/*   Updated: 2020/01/27 21:15:41 by ftadeu-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "LIBFT.H"
 
 /*
-** Replaces the first n chars in string dest by the chars in string src.
-** Returns a void *dest to allow function chaining.
+** Fills the first n chars of s with zeros.
 */
 
-void		*ft_memcpy(void *dest, const void *src, size_t n)
+void		ft_bzero(void *s, size_t n)
 {
-	char		*d;
-	const char	*s;
-
-	d = dest;
-	s = src;
-	while (n--)
-		*d++ = *s++;
-	return (dest);
+	ft_memset(s, 0, n);
+	return (0);
 }
