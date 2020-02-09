@@ -6,11 +6,11 @@
 /*   By: ftadeu-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/22 21:56:06 by ftadeu-d          #+#    #+#             */
-/*   Updated: 2020/02/09 14:22:53 by ftadeu-d         ###   ########.fr       */
+/*   Updated: 2020/02/09 17:02:43 by ftadeu-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "LIBFT.H"
+#include "libft.h"
 
 /*
 ** Replaces the first len characters in b by c converted to char.

@@ -6,11 +6,11 @@
 /*   By: ftadeu-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 21:12:17 by ftadeu-d          #+#    #+#             */
-/*   Updated: 2020/02/09 14:33:05 by ftadeu-d         ###   ########.fr       */
+/*   Updated: 2020/02/09 17:02:09 by ftadeu-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "LIBFT.H"
+#include "libft.h"
 
 /*
 ** Fills the first n chars of s with zeros.
