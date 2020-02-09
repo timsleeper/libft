@@ -6,11 +6,11 @@
 /*   By: ftadeu-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/22 21:35:55 by ftadeu-d          #+#    #+#             */
-/*   Updated: 2020/01/22 22:02:32 by ftadeu-d         ###   ########.fr       */
+/*   Updated: 2020/02/09 14:37:58 by ftadeu-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "LIBFT.H"
+#include "libft.h"
 
 /*
 ** Finds the first occurence of c converted to char

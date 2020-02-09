@@ -6,11 +6,11 @@
 /*   By: ftadeu-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/22 21:10:51 by ftadeu-d          #+#    #+#             */
-/*   Updated: 2020/01/22 22:04:48 by ftadeu-d         ###   ########.fr       */
+/*   Updated: 2020/02/09 14:37:27 by ftadeu-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "LIBFT.FT"
+#include "libft.h"
 #include <unistd.h>
 
 /*

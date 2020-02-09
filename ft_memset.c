@@ -6,23 +6,23 @@
 /*   By: ftadeu-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/22 21:56:06 by ftadeu-d          #+#    #+#             */
-/*   Updated: 2020/01/22 22:11:47 by ftadeu-d         ###   ########.fr       */
+/*   Updated: 2020/02/09 14:22:53 by ftadeu-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "LIBFT.H"
 
 /*
-** Replaces the first n characters in s by c converted to char.
-** Returns a void *s to allow function chaining.
+** Replaces the first len characters in b by c converted to char.
+** Returns a void *b to allow function chaining.
 */
 
-void		*ft_memset(void *s, int c, size_t n)
+void		*ft_memset(void *b, int c, size_t len)
 {
 	unsigned char *p;
 
-	p = s;
-	while (n--)
+	p = b;
+	while (len--)
 		*p++ = (unsigned char)c;
-	return (s);
+	return (b);
 }
