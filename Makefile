@@ -6,7 +6,7 @@
 #    By: ftadeu-d <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/09 14:27:20 by ftadeu-d          #+#    #+#              #
-#    Updated: 2020/02/09 17:37:45 by ftadeu-d         ###   ########.fr        #
+#    Updated: 2020/02/09 18:32:06 by ftadeu-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,13 @@ SRC = ft_bzero.c \
 	  ft_memset.c \
 	  ft_putchar.c \
 	  ft_strlen.c \
-	  ft_strchr.c
+	  ft_strncmp.c \
+	  ft_strchr.c \
+	  ft_strrchr.c \
+	  ft_strdup.c \
+	  ft_calloc.c \
+	  ft_strlcpy.c
+
 
 OBJ = $(SRC:.c=.o)
 

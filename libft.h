@@ -6,7 +6,7 @@
 /*   By: ftadeu-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/22 20:56:47 by ftadeu-d          #+#    #+#             */
-/*   Updated: 2020/02/09 17:37:18 by ftadeu-d         ###   ########.fr       */
+/*   Updated: 2020/02/09 18:32:49 by ftadeu-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,11 @@ void		*ft_memmove(void *dst, const void *src, size_t len);
 void		*ft_memset(void *b, int c, size_t len);
 void		ft_putchar(char c);
 size_t		ft_strlen(const char *s);
+int			ft_strncmp(const char *s1, const char *s2, size_t n);
 char		*ft_strchr(const char *s, int c);
+char		*ft_strrchr(const char *s, int c);
+char		*ft_strdup(const char *s1);
+void		*ft_calloc(size_t count, size_t size);
+size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize);
 
 #endif
