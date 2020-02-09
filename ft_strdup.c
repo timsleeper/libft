@@ -6,7 +6,7 @@
 /*   By: ftadeu-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/09 18:04:24 by ftadeu-d          #+#    #+#             */
-/*   Updated: 2020/02/09 18:08:09 by ftadeu-d         ###   ########.fr       */
+/*   Updated: 2020/02/09 18:47:17 by ftadeu-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,13 @@
 
 char		*ft_strdup(const char *s1)
 {
-	char *str;
-	size_t len;
+	char	*str;
+	size_t	len;
 
 	len = ft_strlen(s1);
-	str = (char *) malloc (len + 1);
+	str = (char *)malloc(len + 1);
 	if (!str)
 		return (0);
-
 	str[len] = '\0';
-	return ((char *) ft_memcpy(str, s1, len));
+	return ((char *)ft_memcpy(str, s1, len));
 }

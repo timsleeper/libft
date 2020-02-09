@@ -6,7 +6,7 @@
 /*   By: ftadeu-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/22 22:13:57 by ftadeu-d          #+#    #+#             */
-/*   Updated: 2020/02/09 15:07:53 by ftadeu-d         ###   ########.fr       */
+/*   Updated: 2020/02/09 18:48:21 by ftadeu-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void		*ft_memcpy(void *dest, const void *src, size_t n)
 	d = dest;
 	s = src;
 	if (d == NULL && s == NULL && n > 0)
-		return(dest);
+		return (dest);
 	while (n)
 	{
 		*d = *s;
