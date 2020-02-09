@@ -6,11 +6,11 @@
 /*   By: ftadeu-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/22 22:13:57 by ftadeu-d          #+#    #+#             */
-/*   Updated: 2020/01/27 19:57:12 by ftadeu-d         ###   ########.fr       */
+/*   Updated: 2020/02/09 15:07:53 by ftadeu-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "LIBFT.H"
+#include "libft.h"
 
 /*
 ** Replaces the first n chars in string dest by the chars in string src.
@@ -24,7 +24,14 @@ void		*ft_memcpy(void *dest, const void *src, size_t n)
 
 	d = dest;
 	s = src;
-	while (n--)
-		*d++ = *s++;
+	if (d == NULL && s == NULL && n > 0)
+		return(dest);
+	while (n)
+	{
+		*d = *s;
+		d++;
+		s++;
+		n--;
+	}
 	return (dest);
 }

@@ -6,17 +6,22 @@
 /*   By: ftadeu-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 21:22:44 by ftadeu-d          #+#    #+#             */
-/*   Updated: 2020/02/09 14:05:02 by ftadeu-d         ###   ########.fr       */
+/*   Updated: 2020/02/09 15:31:52 by ftadeu-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "LIBFT.H"
+#include "libft.h"
 
-void	*ft_memccpy(void *restrict dst, const void *restrict src, int c, size_t n)
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	void unsigned char *p;
+	void	*p;
 
 	p = ft_memchr(src, c, n);
-	if (p != 0)
-
+	if (!p)
+	{
+		ft_memcpy(dst, src, n);
+		return (0);
+	}
+	ft_memcpy(dst, src, p - src + 1);
+	return (dst + (p - src + 1));
 }
