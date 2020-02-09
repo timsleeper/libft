@@ -6,7 +6,7 @@
 #    By: ftadeu-d <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/09 14:27:20 by ftadeu-d          #+#    #+#              #
-#    Updated: 2020/02/09 15:45:32 by ftadeu-d         ###   ########.fr        #
+#    Updated: 2020/02/09 17:37:45 by ftadeu-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,13 @@ CC = gcc
 CFLAGS = -Wall -Werror -Wextra -I. -c
 
 SRC = ft_bzero.c \
+	  ft_isalnum.c \
+	  ft_isalpha.c \
+	  ft_isascii.c \
+	  ft_isdigit.c \
+	  ft_isprint.c \
+	  ft_tolower.c \
+	  ft_toupper.c \
 	  ft_memchr.c \
 	  ft_memcmp.c \
 	  ft_memcpy.c \
