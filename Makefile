@@ -6,7 +6,7 @@
 #    By: ftadeu-d <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/09 14:27:20 by ftadeu-d          #+#    #+#              #
-#    Updated: 2020/02/09 18:32:06 by ftadeu-d         ###   ########.fr        #
+#    Updated: 2020/02/10 20:12:27 by ftadeu-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ CC = gcc
 
 CFLAGS = -Wall -Werror -Wextra -I. -c
 
-SRC = ft_bzero.c \
+SRC = ft_atoi.c \
+	  ft_bzero.c \
 	  ft_isalnum.c \
 	  ft_isalpha.c \
 	  ft_isascii.c \
@@ -37,7 +38,9 @@ SRC = ft_bzero.c \
 	  ft_strrchr.c \
 	  ft_strdup.c \
 	  ft_calloc.c \
-	  ft_strlcpy.c
+	  ft_strlcpy.c \
+	  ft_strlcat.c \
+	  ft_strnstr.c
 
 
 OBJ = $(SRC:.c=.o)

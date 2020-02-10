@@ -6,7 +6,7 @@
 /*   By: ftadeu-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/22 20:56:47 by ftadeu-d          #+#    #+#             */
-/*   Updated: 2020/02/09 18:32:49 by ftadeu-d         ###   ########.fr       */
+/*   Updated: 2020/02/10 20:12:17 by ftadeu-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,8 @@ char		*ft_strrchr(const char *s, int c);
 char		*ft_strdup(const char *s1);
 void		*ft_calloc(size_t count, size_t size);
 size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize);
+int			ft_atoi(const char *str);
+size_t		ft_strlcat(char *dst, const char *src, size_t dstsize);
+char		*ft_strnstr(const char *haystack, const char *needle, size_t len);
 
 #endif
