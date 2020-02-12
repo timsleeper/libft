@@ -6,7 +6,7 @@
 /*   By: ftadeu-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 20:03:49 by ftadeu-d          #+#    #+#             */
-/*   Updated: 2020/02/10 20:32:24 by ftadeu-d         ###   ########.fr       */
+/*   Updated: 2020/02/11 22:44:51 by ftadeu-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,20 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	char 	*h;
-	char	*n;
-	size_t	l;
+	size_t	hlen;
+	size_t	nlen;
 
-	h = (char *)haystack;
-	n = (char *)needle;
-	l = ft_strlen(needle);
-	if (len == 0 || !haystack || !needle)
-		return (h);
-	while (h == ft_strchr(h, n[0]))
+	hlen = ft_strlen(haystack);
+	nlen = ft_strlen(needle);
+	if (!*needle || !ft_strncmp(haystack, needle, nlen))
+		return ((char *)haystack);
+	while (nlen <= hlen && *haystack && len > nlen)
 	{
-		if (!ft_strncmp(h, n, l))
-			return (h);
-		h++;
+		if (!ft_strncmp(haystack, needle, nlen))
+			return ((char *)haystack);
+		++haystack;
+		--hlen;
+		--len;
 	}
 	return (0);
 }
