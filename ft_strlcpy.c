@@ -6,7 +6,7 @@
 /*   By: ftadeu-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/09 18:26:40 by ftadeu-d          #+#    #+#             */
-/*   Updated: 2020/02/09 18:32:42 by ftadeu-d         ###   ########.fr       */
+/*   Updated: 2020/02/15 19:58:02 by ftadeu-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t srcsize;
 
+	if (!dst || !src)
+		return (0);
 	srcsize = ft_strlen(src);
 	if (srcsize + 1 < dstsize)
 		ft_memcpy(dst, src, srcsize + 1);

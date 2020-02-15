@@ -1,43 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_count_nbr_len.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftadeu-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/15 13:28:14 by ftadeu-d          #+#    #+#             */
-/*   Updated: 2020/02/15 18:31:16 by ftadeu-d         ###   ########.fr       */
+/*   Created: 2020/02/15 19:21:09 by ftadeu-d          #+#    #+#             */
+/*   Updated: 2020/02/15 19:54:16 by ftadeu-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-char	*ft_strjoin(char const *s1, char const *s2)
+int		ft_count_nbr_len(int n)
 {
-	size_t	l1;
-	size_t	len;
-	size_t	i;
-	char	*dest;
+	int				count;
+	unsigned int	nbr;
 
-	i = 0;
-	len = 0;
-	l1 = ft_strlen(s1);
-	len = l1 + ft_strlen(s2);
-	if (!s1 || !s2)
-		return (0);
-	if (!(dest = (char *)malloc(sizeof(char) * (len + 1))))
-		return (0);
-	while (i < l1)
+	if (n == 0)
+		return (1);
+	count = 0;
+	nbr = n;
+	if (n < 0)
 	{
-		dest[i] = s1[i];
-		i++;
+		count++;
+		nbr = -n;
 	}
-	while (i < len)
+	while (nbr > 0)
 	{
-		dest[i] = s2[i - l1];
-		i++;
+		nbr /= 10;
+		count++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	return(count);
 }

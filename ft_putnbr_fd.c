@@ -1,43 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftadeu-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/15 13:28:14 by ftadeu-d          #+#    #+#             */
-/*   Updated: 2020/02/15 18:31:16 by ftadeu-d         ###   ########.fr       */
+/*   Created: 2020/02/15 17:59:00 by ftadeu-d          #+#    #+#             */
+/*   Updated: 2020/02/15 18:03:09 by ftadeu-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-char	*ft_strjoin(char const *s1, char const *s2)
+void	ft_putnbr_fd(int nb, int fd)
 {
-	size_t	l1;
-	size_t	len;
-	size_t	i;
-	char	*dest;
-
-	i = 0;
-	len = 0;
-	l1 = ft_strlen(s1);
-	len = l1 + ft_strlen(s2);
-	if (!s1 || !s2)
-		return (0);
-	if (!(dest = (char *)malloc(sizeof(char) * (len + 1))))
-		return (0);
-	while (i < l1)
+	if (nb == -2147483648)
+		ft_putstr_fd("-2147483648", fd);
+	else if (nb < 0)
 	{
-		dest[i] = s1[i];
-		i++;
+		ft_putchar_fd('-', fd);
+		ft_putnbr_fd(-nb, fd);
 	}
-	while (i < len)
+	else if (nb >= 10)
 	{
-		dest[i] = s2[i - l1];
-		i++;
+		ft_putnbr_fd(nb / 10, fd);
+		ft_putchar_fd((nb % 10) + '0', fd);
 	}
-	dest[i] = '\0';
-	return (dest);
+	else
+		ft_putchar_fd(nb + '0', fd);
 }

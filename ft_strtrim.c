@@ -1,43 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftadeu-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/15 13:28:14 by ftadeu-d          #+#    #+#             */
-/*   Updated: 2020/02/15 18:31:16 by ftadeu-d         ###   ########.fr       */
+/*   Created: 2020/02/15 14:54:14 by ftadeu-d          #+#    #+#             */
+/*   Updated: 2020/02/15 18:16:19 by ftadeu-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	l1;
-	size_t	len;
-	size_t	i;
+	size_t	st;
+	size_t	e;
 	char	*dest;
 
-	i = 0;
-	len = 0;
-	l1 = ft_strlen(s1);
-	len = l1 + ft_strlen(s2);
-	if (!s1 || !s2)
+	if (!s1 || !set)
 		return (0);
-	if (!(dest = (char *)malloc(sizeof(char) * (len + 1))))
+	st = 0;
+	while (s1[st] && ft_strchr(set, (int)s1[st]))
+		st++;
+	e = ft_strlen(s1 + st);
+	if (e)
+		while (s1[e + st - 1] != 0 && ft_strchr(set, (int)s1[e + st - 1]) != 0)
+			e--;
+	if (!(dest = (char *)malloc(sizeof(char) * (e + 1))))
 		return (0);
-	while (i < l1)
-	{
-		dest[i] = s1[i];
-		i++;
-	}
-	while (i < len)
-	{
-		dest[i] = s2[i - l1];
-		i++;
-	}
-	dest[i] = '\0';
+	ft_strncpy(dest, s1 + st, e);
+	dest[e] = '\0';
 	return (dest);
 }

@@ -6,7 +6,7 @@
 /*   By: ftadeu-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/22 20:56:47 by ftadeu-d          #+#    #+#             */
-/*   Updated: 2020/02/15 13:44:02 by ftadeu-d         ###   ########.fr       */
+/*   Updated: 2020/02/15 19:31:19 by ftadeu-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define LIBFT_H
 
 #include <string.h>
+#include <stdlib.h>
 
 void		ft_bzero(void *s, size_t n);
 int			ft_isalnum(int c);
@@ -42,5 +43,15 @@ size_t		ft_strlcat(char *dst, const char *src, size_t dstsize);
 char		*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char		*ft_substr(char const *s, unsigned int start, size_t len);
 char		*ft_strjoin(char const *s1, char const *s2);
+char		*ft_strtrim(char const *s1, char const *set);
+char		*ft_strncpy(char *dest, const char *src, size_t n);
+void		ft_putchar_fd(char c, int fd);
+void		ft_putstr_fd(char *str, int fd);
+void		ft_putnbr_fd(int n, int fd);
+void		ft_putendl_fd(char *s, int fd);
+char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+int			ft_count_nbr_len(int n);
+char		*ft_itoa(int n);
+
 
 #endif

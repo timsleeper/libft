@@ -1,43 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftadeu-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/15 13:28:14 by ftadeu-d          #+#    #+#             */
-/*   Updated: 2020/02/15 18:31:16 by ftadeu-d         ###   ########.fr       */
+/*   Created: 2020/02/15 19:15:16 by ftadeu-d          #+#    #+#             */
+/*   Updated: 2020/02/15 19:20:56 by ftadeu-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	l1;
-	size_t	len;
+	char	*str;
 	size_t	i;
-	char	*dest;
 
-	i = 0;
-	len = 0;
-	l1 = ft_strlen(s1);
-	len = l1 + ft_strlen(s2);
-	if (!s1 || !s2)
+	if (!s || !f)
 		return (0);
-	if (!(dest = (char *)malloc(sizeof(char) * (len + 1))))
+	if (s)
+	{
+		str = ft_strdup((const char *)s);
+		if (str == 0)
+			return (0);
+		i = 0;
+		while (str[i] != 0)
+		{
+			str[i] = f((unsigned int)i, str[i]);
+			i++;
+		}
+		return (str);
+	}
+	else
 		return (0);
-	while (i < l1)
-	{
-		dest[i] = s1[i];
-		i++;
-	}
-	while (i < len)
-	{
-		dest[i] = s2[i - l1];
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
 }
