@@ -6,7 +6,7 @@
 #    By: ftadeu-d <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/09 14:27:20 by ftadeu-d          #+#    #+#              #
-#    Updated: 2020/02/10 20:12:27 by ftadeu-d         ###   ########.fr        #
+#    Updated: 2020/02/15 13:43:36 by ftadeu-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,9 @@ SRC = ft_atoi.c \
 	  ft_calloc.c \
 	  ft_strlcpy.c \
 	  ft_strlcat.c \
-	  ft_strnstr.c
+	  ft_strnstr.c \
+	  ft_substr.c \
+	  ft_strjoin.c
 
 
 OBJ = $(SRC:.c=.o)
