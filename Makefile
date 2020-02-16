@@ -6,15 +6,11 @@
 #    By: ftadeu-d <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/09 14:27:20 by ftadeu-d          #+#    #+#              #
-#    Updated: 2020/02/16 14:31:19 by ftadeu-d         ###   ########.fr        #
+#    Updated: 2020/02/16 17:28:53 by ftadeu-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
-
-CC = gcc
-
-CFLAGS = -Wall -Werror -Wextra -I. -c
 
 SRC = ft_atoi.c \
 	  ft_bzero.c \
@@ -54,8 +50,13 @@ SRC = ft_atoi.c \
 	  ft_itoa.c \
 	  ft_split.c
 
+BONUS = $(SRC) ft_lstnew.c ft_lstadd_front.c
 
-OBJ = $(SRC:.c=.o)
+CFLAGS = -Wall -Werror -Wextra
+
+OBJ = $(subst .c,.o,$(SRC))
+
+BONUS_OBJ = $(subst .c,.o,$(BONUS))
 
 all: $(NAME)
 
@@ -63,8 +64,16 @@ $(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 
+OBJ: $(subst .o,.c,$(SRC))
+	gcc -c $(CFLAGS) $(SRC)
+
+bonus:
+	gcc $(CFLAGS) -c $(BONUS)
+	ar rc $(NAME) $(BONUS_OBJ)
+	ranlib $(NAME)
+
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJ) $(BONUS_OBJ)
 
 fclean: clean
 	rm -f $(NAME)
