@@ -5,105 +5,93 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftadeu-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/15 21:02:55 by ftadeu-d          #+#    #+#             */
-/*   Updated: 2020/02/15 21:03:06 by ftadeu-d         ###   ########.fr       */
+/*   Created: 2020/02/16 13:46:06 by ftadeu-d          #+#    #+#             */
+/*   Updated: 2020/02/16 15:04:16 by ftadeu-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <string.h>
+#include "libft.h"
 
-static int        numstring(char const *s1, char c)
+static int	num_segments(char const *str, char c)
 {
-    int    comp;
-    int    cles;
+	int		segments;
+	int		tmp;
 
-    comp = 0;
-    cles = 0;
-    if (*s1 == '\0')
-        return (0);
-    while (*s1 != '\0')
-    {
-        if (*s1 == c)
-            cles = 0;
-        else if (cles == 0)
-        {
-            cles = 1;
-            comp++;
-        }
-        s1++;
-    }
-    return (comp);
+	segments = 0;
+	tmp = 0;
+	if (!str)
+		return (0);
+	while (*str)
+	{
+		if (*str == c)
+			tmp = 0;
+		else if (tmp == 0)
+		{
+			tmp = 1;
+			segments++;
+		}
+		str++;
+	}
+	return (segments);
 }
 
-static int        numchar(char const *s2, char c, int i)
+static int	num_chr(char const *str, char c, int i)
 {
-    int    lenght;
+	int		len;
 
-    lenght = 0;
-    while (s2[i] != c && s2[i] != '\0')
-    {
-        lenght++;
-        i++;
-    }
-    return (lenght);
+	len = 0;
+	while (str[i] != c && str[i] != '\0')
+	{
+		len++;
+		i++;
+	}
+	return (len);
 }
 
-static char        **freee(char const **dst, int j)
+static char	**free_mem(char const **dest, int j)
 {
-    while (j > 0)
-    {
-        j--;
-        free((void *)dst[j]);
-    }
-    free(dst);
-    return (NULL);
+	while (j > 0)
+	{
+		j--;
+		free((void *)dest[j]);
+	}
+	free(dest);
+	return (0);
 }
 
-static char        **affect(char const *s, char **dst, char c, int l)
+static char	**breakstr(char const *s, char **dest, char c, int segments)
 {
-    int    i;
-    int    j;
-    int    k;
+	int i;
+	int j;
+	int k;
 
-    i = 0;
-    j = 0;
-    while (s[i] != '\0' && j < l)
-    {
-        k = 0;
-        while (s[i] == c)
-            i++;
-        dst[j] = (char *)malloc(sizeof(char) * numchar(s, c, i) + 1);
-        if (dst[j] == NULL)
-            return (freee((char const **)dst, j));
-        while (s[i] != '\0' && s[i] != c)
-            dst[j][k++] = s[i++];
-        dst[j][k] = '\0';
-        j++;
-    }
-    dst[j] = 0;
-    return (dst);
+	i = 0;
+	j = 0;
+	while (s[i] != '\0' && j < segments)
+	{
+		k = 0;
+		while (s[i] == c)
+			i++;
+		if (!(dest[j] = (char *)malloc(sizeof(char) * (num_chr(s, c, i) + 1))))
+			return (free_mem((char const **)dest, j));
+		while (s[i] != '\0' && s[i] != c)
+			dest[j][k++] = s[i++];
+		dest[j][k] = '\0';
+		j++;
+	}
+	dest[j] = 0;
+	return (dest);
 }
 
-char            **ft_split(char const *s, char c)
+char		**ft_split(char const *s, char c)
 {
-    char    **dst;
-    int        l;
+	char	**dest;
+	int		segments;
 
-    if (s == NULL)
-        return (NULL);
-    l = numstring(s, c);
-    dst = (char **)malloc(sizeof(char *) * (l + 1));
-    if (dst == NULL)
-        return (NULL);
-    return (affect(s, dst, c, l));
-}
-
-int                main(void)
-{
-  char **tabstr;
-  
-  tabstr = ft_split("lorem ipsum dolor sit amet", ' ');
-  
-  return (0);
+	if (s == 0)
+		return (0);
+	segments = num_segments(s, c);
+	if (!(dest = (char **)malloc(sizeof(char *) * (segments + 1))))
+		return (0);
+	return (breakstr(s, dest, c, segments));
 }

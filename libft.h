@@ -6,15 +6,15 @@
 /*   By: ftadeu-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/22 20:56:47 by ftadeu-d          #+#    #+#             */
-/*   Updated: 2020/02/15 19:31:19 by ftadeu-d         ###   ########.fr       */
+/*   Updated: 2020/02/16 14:31:09 by ftadeu-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
-#define LIBFT_H
+#define		LIBFT_H
 
-#include <string.h>
-#include <stdlib.h>
+#include	<string.h>
+#include	<stdlib.h>
 
 void		ft_bzero(void *s, size_t n);
 int			ft_isalnum(int c);
@@ -52,6 +52,6 @@ void		ft_putendl_fd(char *s, int fd);
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int			ft_count_nbr_len(int n);
 char		*ft_itoa(int n);
-
+char		**ft_split(char const *s, char c);
 
 #endif

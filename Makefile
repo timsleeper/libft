@@ -6,7 +6,7 @@
 #    By: ftadeu-d <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/09 14:27:20 by ftadeu-d          #+#    #+#              #
-#    Updated: 2020/02/15 19:30:26 by ftadeu-d         ###   ########.fr        #
+#    Updated: 2020/02/16 14:31:19 by ftadeu-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,8 @@ SRC = ft_atoi.c \
 	  ft_putendl_fd.c \
 	  ft_strmapi.c \
 	  ft_count_nbr_len.c \
-	  ft_itoa.c
+	  ft_itoa.c \
+	  ft_split.c
 
 
 OBJ = $(SRC:.c=.o)
