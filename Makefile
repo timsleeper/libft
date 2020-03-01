@@ -6,7 +6,7 @@
 #    By: ftadeu-d <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/09 14:27:20 by ftadeu-d          #+#    #+#              #
-#    Updated: 2020/02/16 17:28:53 by ftadeu-d         ###   ########.fr        #
+#    Updated: 2020/02/29 22:30:39 by ftadeu-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,7 +50,15 @@ SRC = ft_atoi.c \
 	  ft_itoa.c \
 	  ft_split.c
 
-BONUS = $(SRC) ft_lstnew.c ft_lstadd_front.c
+BONUS = $(SRC) ft_lstnew.c \
+		ft_lstadd_front.c \
+		ft_lstadd_back.c \
+		ft_lstlast.c \
+		ft_lstsize.c \
+		ft_lstdelone.c \
+		ft_lstclear.c \
+		ft_lstiter.c \
+		ft_lstmap.c
 
 CFLAGS = -Wall -Werror -Wextra
 

@@ -6,7 +6,7 @@
 /*   By: ftadeu-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/16 16:53:56 by ftadeu-d          #+#    #+#             */
-/*   Updated: 2020/02/16 17:49:46 by ftadeu-d         ###   ########.fr       */
+/*   Updated: 2020/02/29 19:27:42 by ftadeu-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void		ft_lstadd_front(t_list **lst, t_list *new)
 {
-	(*new).next = *lst;
+	new->next = *lst;
 	*lst = new;
 }
