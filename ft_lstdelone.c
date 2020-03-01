@@ -6,7 +6,7 @@
 /*   By: ftadeu-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/29 20:30:02 by ftadeu-d          #+#    #+#             */
-/*   Updated: 2020/02/29 22:28:42 by ftadeu-d         ###   ########.fr       */
+/*   Updated: 2020/02/29 22:58:15 by ftadeu-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
 	if (!del)
-		return;
+		return ;
 	if (lst)
 	{
 		del(lst->content);

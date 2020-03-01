@@ -6,7 +6,7 @@
 /*   By: ftadeu-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/29 22:30:23 by ftadeu-d          #+#    #+#             */
-/*   Updated: 2020/02/29 22:40:14 by ftadeu-d         ###   ########.fr       */
+/*   Updated: 2020/02/29 22:54:31 by ftadeu-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,21 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*start;
+	t_list	*elem;
 	t_list	*new;
 
 	if (!f || !del)
 		return (0);
-	start = NULL;
+	new = NULL;
 	while (lst)
 	{
-		if (!(start = ft_lstnew(f(lst->content))))
+		if (!(elem = ft_lstnew(f(lst->content))))
 		{
-			ft_lstclear(new, del);
+			ft_lstclear(&new, del);
 			return (0);
 		}
-		ft_lstadd_back(new, start);
+		ft_lstadd_back(&new, elem);
 		lst = lst->next;
 	}
-	return (start)
+	return (new);
 }

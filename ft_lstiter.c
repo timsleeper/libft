@@ -6,7 +6,7 @@
 /*   By: ftadeu-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/29 22:25:11 by ftadeu-d          #+#    #+#             */
-/*   Updated: 2020/02/29 22:26:35 by ftadeu-d         ###   ########.fr       */
+/*   Updated: 2020/02/29 22:51:02 by ftadeu-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void		ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	if (!f)
-		return;
+		return ;
 	while (lst)
 	{
 		f(lst->content);
