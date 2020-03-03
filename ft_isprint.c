@@ -6,11 +6,15 @@
 /*   By: ftadeu-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/09 17:30:08 by ftadeu-d          #+#    #+#             */
-/*   Updated: 2020/02/09 17:30:49 by ftadeu-d         ###   ########.fr       */
+/*   Updated: 2020/03/02 14:54:23 by ftadeu-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** Returns 1 if input is printable.
+*/
 
 int		ft_isprint(int c)
 {

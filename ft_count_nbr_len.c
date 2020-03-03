@@ -6,11 +6,15 @@
 /*   By: ftadeu-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/15 19:21:09 by ftadeu-d          #+#    #+#             */
-/*   Updated: 2020/02/15 19:54:16 by ftadeu-d         ###   ########.fr       */
+/*   Updated: 2020/03/02 14:36:40 by ftadeu-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** Returns the length of a number.
+*/
 
 int		ft_count_nbr_len(int n)
 {
@@ -31,5 +35,5 @@ int		ft_count_nbr_len(int n)
 		nbr /= 10;
 		count++;
 	}
-	return(count);
+	return (count);
 }

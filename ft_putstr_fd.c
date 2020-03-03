@@ -3,14 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftadeu-d <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ftadeu-d <ftadeu-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/15 17:55:23 by ftadeu-d          #+#    #+#             */
-/*   Updated: 2020/02/15 17:57:54 by ftadeu-d         ###   ########.fr       */
+/*   Updated: 2020/03/02 15:56:57 by ftadeu-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** Prints a string to fd
+*/
 
 void	ft_putstr_fd(char *str, int fd)
 {

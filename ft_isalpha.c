@@ -6,11 +6,15 @@
 /*   By: ftadeu-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/09 17:07:16 by ftadeu-d          #+#    #+#             */
-/*   Updated: 2020/02/09 17:10:30 by ftadeu-d         ###   ########.fr       */
+/*   Updated: 2020/03/02 14:46:27 by ftadeu-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** Returns 1 if input is a letter.
+*/
 
 int		ft_isalpha(int c)
 {

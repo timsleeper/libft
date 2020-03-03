@@ -3,14 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftadeu-d <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ftadeu-d <ftadeu-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/09 15:41:03 by ftadeu-d          #+#    #+#             */
-/*   Updated: 2020/02/09 18:50:32 by ftadeu-d         ###   ########.fr       */
+/*   Updated: 2020/03/02 15:45:17 by ftadeu-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** Copies "len" bytes from src to dst
+*/
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {

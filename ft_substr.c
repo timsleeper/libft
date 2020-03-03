@@ -3,15 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftadeu-d <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ftadeu-d <ftadeu-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/15 12:57:32 by ftadeu-d          #+#    #+#             */
-/*   Updated: 2020/02/15 19:58:43 by ftadeu-d         ###   ########.fr       */
+/*   Updated: 2020/03/02 15:47:59 by ftadeu-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
+
+/*
+** Allocates with MALLOC and returns substring of *s size len
+*/
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {

@@ -6,11 +6,16 @@
 /*   By: exam <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 12:53:39 by exam              #+#    #+#             */
-/*   Updated: 2020/02/11 21:09:41 by ftadeu-d         ###   ########.fr       */
+/*   Updated: 2020/03/02 14:32:03 by ftadeu-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** Iterates over the string ignoring spaces. Gets the first sign it finds.
+** If a digit is found, keeps adding to variable res.
+*/
 
 int	ft_atoi(const char *str)
 {
