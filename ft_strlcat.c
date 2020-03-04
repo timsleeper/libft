@@ -6,7 +6,7 @@
 /*   By: ftadeu-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 19:49:41 by ftadeu-d          #+#    #+#             */
-/*   Updated: 2020/02/10 20:01:34 by ftadeu-d         ###   ########.fr       */
+/*   Updated: 2020/03/03 21:15:07 by ftadeu-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,19 @@
 
 size_t		ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	char		*d;
-	const char	*s;
-	size_t		len;
-	size_t		n;
+	size_t	p;
+	size_t	q;
 
-	d = dst;
-	s = src;
-	n = dstsize;
-	while (n-- != 0 && *d != '\0')
-		d++;
-	len = d - dst;
-	n = dstsize - len;
-	if (n == 0)
-		return (len + ft_strlen(s));
-	while (*s != '\0')
+	if (dstsize <= ft_strlen(dst))
+		return (dstsize + ft_strlen(src));
+	p = ft_strlen(dst);
+	q = 0;
+	while (src[q] != '\0' && p + 1 < dstsize)
 	{
-		if (n != 1)
-		{
-			*d++ = *s;
-			n--;
-		}
-		s++;
+		dst[p] = src[q];
+		p++;
+		q++;
 	}
-	*d = '\0';
-	return (len + (s - src));
+	dst[p] = '\0';
+	return (ft_strlen(dst) + ft_strlen(&src[q]));
 }

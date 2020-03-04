@@ -6,7 +6,7 @@
 /*   By: ftadeu-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/22 21:56:06 by ftadeu-d          #+#    #+#             */
-/*   Updated: 2020/02/09 17:02:43 by ftadeu-d         ###   ########.fr       */
+/*   Updated: 2020/03/02 22:11:40 by ftadeu-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,15 @@
 
 void		*ft_memset(void *b, int c, size_t len)
 {
-	unsigned char *p;
+	unsigned char	*p;
+	size_t			i;
 
 	p = b;
-	while (len--)
-		*p++ = (unsigned char)c;
+	i = 0;
+	while (i < len)
+	{
+		p[i] = (unsigned char)c;
+		i++;
+	}
 	return (b);
 }

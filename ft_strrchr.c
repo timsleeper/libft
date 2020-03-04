@@ -6,7 +6,7 @@
 /*   By: ftadeu-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/09 17:41:40 by ftadeu-d          #+#    #+#             */
-/*   Updated: 2020/02/09 17:49:43 by ftadeu-d         ###   ########.fr       */
+/*   Updated: 2020/03/03 21:32:38 by ftadeu-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,15 @@
 
 char		*ft_strrchr(const char *s, int c)
 {
-	size_t i;
+	size_t		i;
+	const char	*first;
 
+	first = s;
 	i = ft_strlen(s);
-	if ((char)c == '\0')
-		return ((char *)s + i);
-	while (i--)
-		if (*(s + i) == c)
-			return ((char *)(s + i));
+	s = (s + i);
+	while (*s != *first && c != *s)
+		s--;
+	if (c == *s)
+		return ((char *)s);
 	return (0);
 }

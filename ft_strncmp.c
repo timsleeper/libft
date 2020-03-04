@@ -6,7 +6,7 @@
 /*   By: ftadeu-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/09 17:57:21 by ftadeu-d          #+#    #+#             */
-/*   Updated: 2020/02/09 18:52:39 by ftadeu-d         ###   ########.fr       */
+/*   Updated: 2020/03/03 21:32:08 by ftadeu-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,17 @@
 
 int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned char u1;
-	unsigned char u2;
+	size_t	i;
+	int		res;
 
-	while (n-- > 0)
+	i = 0;
+	res = 0;
+	while (i < n)
 	{
-		u1 = (unsigned char)*s1++;
-		u2 = (unsigned char)*s2++;
-		if (u1 != u2)
-			return (u1 - u2);
-		if (u1 == '\0')
-			return (0);
+		res = (unsigned char)s1[i] - (unsigned char)s2[i];
+		if (res != 0 || !s1[i] || !s2[i])
+			return (res);
+		i++;
 	}
-	return (0);
+	return (res);
 }

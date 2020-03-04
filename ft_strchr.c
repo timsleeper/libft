@@ -6,7 +6,7 @@
 /*   By: ftadeu-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/22 21:35:55 by ftadeu-d          #+#    #+#             */
-/*   Updated: 2020/02/09 14:37:58 by ftadeu-d         ###   ########.fr       */
+/*   Updated: 2020/03/03 21:20:06 by ftadeu-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@
 
 char		*ft_strchr(const char *s, int c)
 {
-	while (*s != (char)c)
-		if (!*s++)
-			return (0);
-	return (char *)s;
+	while (*s != '\0' && *s != (char)c)
+		s++;
+	if (*s == c)
+		return ((char *)s);
+	return (0);
 }
