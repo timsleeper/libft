@@ -6,7 +6,7 @@
 /*   By: ftadeu-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/22 20:56:47 by ftadeu-d          #+#    #+#             */
-/*   Updated: 2020/02/29 22:41:14 by ftadeu-d         ###   ########.fr       */
+/*   Updated: 2020/03/08 15:24:11 by ftadeu-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,6 @@ void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 		void (*del)(void *));
+char				*ft_strcpy(char *dst, const char *src);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: ftadeu-d <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/09 14:27:20 by ftadeu-d          #+#    #+#              #
-#    Updated: 2020/02/29 22:30:39 by ftadeu-d         ###   ########.fr        #
+#    Updated: 2020/03/08 15:23:08 by ftadeu-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,8 @@ SRC = ft_atoi.c \
 	  ft_strmapi.c \
 	  ft_count_nbr_len.c \
 	  ft_itoa.c \
-	  ft_split.c
+	  ft_split.c \
+	  ft_strcpy.c
 
 BONUS = $(SRC) ft_lstnew.c \
 		ft_lstadd_front.c \

@@ -6,7 +6,7 @@
 /*   By: ftadeu-d <ftadeu-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 21:22:44 by ftadeu-d          #+#    #+#             */
-/*   Updated: 2020/03/03 20:47:56 by ftadeu-d         ###   ########.fr       */
+/*   Updated: 2020/03/08 16:50:37 by ftadeu-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,17 @@
 
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	const char	*s;
-	char		*d;
-	size_t		i;
+	size_t i;
 
 	i = 0;
-	s = src;
-	d = dst;
 	if (!dst && !src)
 		return (0);
 	while (i < n)
 	{
-		d[i] = s[i];
-		if ((unsigned char)s[i++] == (unsigned char)c)
-			return (dst + i);
+		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
+		if ((unsigned char)c == ((unsigned char *)src)[i])
+			return (dst + i + 1);
+		i++;
 	}
 	return (0);
 }

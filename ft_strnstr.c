@@ -6,7 +6,7 @@
 /*   By: ftadeu-d <ftadeu-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 20:03:49 by ftadeu-d          #+#    #+#             */
-/*   Updated: 2020/03/02 15:55:02 by ftadeu-d         ###   ########.fr       */
+/*   Updated: 2020/03/08 17:00:15 by ftadeu-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,15 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t	hlen;
-	size_t	nlen;
+	size_t	needle_l;
 
-	hlen = ft_strlen(haystack);
-	nlen = ft_strlen(needle);
-	if (!*needle || !ft_strncmp(haystack, needle, nlen))
+	if (*needle == '\0')
 		return ((char *)haystack);
-	while (nlen <= hlen && *haystack && len > nlen)
-	{
-		if (!ft_strncmp(haystack, needle, nlen))
+	needle_l = ft_strlen(needle);
+	while (*haystack != '\0' && len-- >= needle_l)
+		if (*haystack == *needle && ft_memcmp(haystack, needle, needle_l) == 0)
 			return ((char *)haystack);
-		++haystack;
-		--hlen;
-		--len;
-	}
-	return (0);
+		else
+			haystack++;
+	return (NULL);
 }

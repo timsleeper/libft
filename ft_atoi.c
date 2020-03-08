@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: exam <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: ftadeu-d <ftadeu-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 12:53:39 by exam              #+#    #+#             */
-/*   Updated: 2020/03/02 14:32:03 by ftadeu-d         ###   ########.fr       */
+/*   Updated: 2020/03/08 15:41:51 by ftadeu-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,24 +19,26 @@
 
 int	ft_atoi(const char *str)
 {
-	long int	res;
-	int			sign;
-	int			i;
-	char		*init;
+	int c;
+	int s;
+	int res;
 
+	c = 0;
+	s = 1;
 	res = 0;
-	i = 0;
-	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' || str[i] == '\v'
-			|| str[i] == '\f' || str[i] == '\r')
-		i++;
-	sign = str[i] == '-' ? -1 : 1;
-	init = sign == -1 || str[i] == '+' ?
-		(char *)str + (i + 1) : (char *)str + i;
-	i = 0;
-	while (ft_isdigit(init[i]))
+	while (str[c] == ' ' || str[c] == '\n' || str[c] == '\t' ||
+			str[c] == '\v' || str[c] == '\f' || str[c] == '\r')
+		c++;
+	if (str[c] == '-' || str[c] == '+')
 	{
-		res = res * 10 + init[i] - '0';
-		i++;
+		if (str[c] == '-')
+			s = -1;
+		c++;
 	}
-	return ((int)(res * sign));
+	while (str[c] >= '0' && str[c] <= '9')
+	{
+		res = (res * 10) + (str[c] - '0');
+		c++;
+	}
+	return (res * s);
 }

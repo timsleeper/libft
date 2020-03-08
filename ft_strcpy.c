@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftadeu-d <ftadeu-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ftadeu-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/22 21:35:55 by ftadeu-d          #+#    #+#             */
-/*   Updated: 2020/03/08 16:34:44 by ftadeu-d         ###   ########.fr       */
+/*   Created: 2020/03/08 15:20:53 by ftadeu-d          #+#    #+#             */
+/*   Updated: 2020/03/08 15:23:12 by ftadeu-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-** Finds the first occurence of c converted to char
-** within the string pointed by s.
-*/
-
-char		*ft_strchr(const char *s, int c)
+char			*ft_strcpy(char *dst, const char *src)
 {
-	while (*s != '\0' && c != *s)
-		s++;
-	if (c == *s)
-		return ((char *)s);
-	return (0);
+	unsigned int	i;
+
+	i = 0;
+	while (src[i])
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (dst);
 }
